@@ -65,7 +65,6 @@ Worker 0 Speed: 89712 hashes/sec
 Worker 3 Speed: 89552 hashes/sec
 {
   found: true,
-  hash: '8888f15554409695637e9f05f13385dc9acfa4e896da507a08e4941a130c4dfe',
   nonce: 1443926n,
   id: 2
 }
