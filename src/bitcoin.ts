@@ -137,13 +137,14 @@ async function createCommitTx(wallet: IValidatedWalletInfo, utxo: Utxo, satsByte
         commitTx: tx.toHex(),
         commitTxId: tx.getId(),
         commitScript: hashscript,
+        commitOutput: hashLockP2TR.output,
         commitValue: mintAmount + revealFee,
         controlBlock: hashLockP2TR.witness![hashLockP2TR.witness!.length - 1],
         btcUsed: totalFee + mintAmount,
     };
 }
 
-async function createRevealTx(wallet: IValidatedWalletInfo, targetAddr: string, mintAmount: number, bitworkr: string, commitTxId: string, commitValue: number, commitScript: Buffer, controlBlock: Buffer) {
+async function createRevealTx(wallet: IValidatedWalletInfo, targetAddr: string, mintAmount: number, bitworkr: string, commitTxId: string, commitValue: number, commitScript: Buffer, commitOutput: Buffer, controlBlock: Buffer) {
     const tapLeafScript = {
         leafVersion: 192,
         script: commitScript,
@@ -152,7 +153,7 @@ async function createRevealTx(wallet: IValidatedWalletInfo, targetAddr: string, 
     const input = {
         hash: commitTxId,
         index: 0,
-        witnessUtxo: { script: commitScript, value: commitValue },
+        witnessUtxo: { script: commitOutput, value: commitValue },
         tapLeafScript: [
             tapLeafScript
         ],

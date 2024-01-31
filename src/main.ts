@@ -45,8 +45,8 @@ program.command('mint')
       let utxo = utxos[i];
       let satsByte = await getSatsByte();
       console.log(`satsByte: ${satsByte}`);
-      let { commitTx, commitTxId, commitValue, commitScript, controlBlock, btcUsed } = await createCommitTx(wallet, utxo, satsByte, options.ticker, options.bitworkc, options.bitworkr, parseInt(options.mintAmount));
-      let { revealTx, revealTxId } = await createRevealTx(wallet, targetAddr, parseInt(options.mintAmount), options.bitworkr, commitTxId, commitValue, commitScript, controlBlock);
+      let { commitTx, commitTxId, commitValue, commitScript, commitOutput, controlBlock, btcUsed } = await createCommitTx(wallet, utxo, satsByte, options.ticker, options.bitworkc, options.bitworkr, parseInt(options.mintAmount));
+      let { revealTx, revealTxId } = await createRevealTx(wallet, targetAddr, parseInt(options.mintAmount), options.bitworkr, commitTxId, commitValue, commitScript, commitOutput, controlBlock);
       console.log(`commitTxId: ${commitTxId}`);
       console.log(`commitTx: ${commitTx}`);
       console.log(`revealTxId: ${revealTxId}`);
