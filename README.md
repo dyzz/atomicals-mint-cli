@@ -1,6 +1,6 @@
 # Atomicals Mint Cli
 
-A standalone atomicals mint cli that does not require a connection to the ElectrumX API.
+A standalone atomicals mint cli that does not require a connection to the ElectrumX API. Currently at ~80K * 4 cores on M1 Max.
 
 Donation: [bc1plwteg9fd7cs50svdmtmg2pt6du3rr3upuw5p8qztteltatl98nhsvrvhfr](https://mempool.space/address/bc1plwteg9fd7cs50svdmtmg2pt6du3rr3upuw5p8qztteltatl98nhsvrvhfr)
 
